@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include "bubbleSort.h"
+#include "quickSort.h"
+#define SIZE 8
 
-
-void printArray(int a[], int qnt)
+void printArray(int a[])
 {
-    for(int i = 0; i < qnt; i++)
+    for(int i = 0; i < SIZE; i++)
     {
         printf("%3d", a[i]);
     }
@@ -13,11 +13,13 @@ void printArray(int a[], int qnt)
 
 int main(void)
 {
-    int a[5] = {1, 4, 3, 2, 5};
+    int a[SIZE] = {1, 4, 3, 5, 7, 2, 6, 10};
+    int inicio = 0;
+    int fim = SIZE - 1;
 
-    printArray(a, 5);
-    bubbleSort(a,5);
-    printArray(a,5);
+    printArray(a);
+    quickSort(a,inicio,fim);
+    printArray(a);
 
     return 0;
 }
